@@ -177,6 +177,8 @@ const Shop$json = {
     {'1': 'EndTime', '3': 31, '4': 1, '5': 9, '10': 'EndTime'},
     {'1': 'IsHoliday', '3': 32, '4': 1, '5': 8, '10': 'IsHoliday'},
     {'1': 'InCurrentSales', '3': 33, '4': 1, '5': 8, '10': 'InCurrentSales'},
+    {'1': 'IsStamped', '3': 37, '4': 1, '5': 8, '10': 'IsStamped'},
+    {'1': 'NumberOfTimes', '3': 38, '4': 1, '5': 5, '10': 'NumberOfTimes'},
   ],
 };
 
@@ -204,7 +206,8 @@ final $typed_data.Uint8List shopDescriptor = $convert.base64Decode(
     '5jZRgbIAEoCVIIRGlzdGFuY2USHgoKV2Vla051bWJlchgcIAEoBVIKV2Vla051bWJlchIcCglE'
     'YXlPZldlZWsYHSABKAVSCURheU9mV2VlaxIcCglTdGFydFRpbWUYHiABKAlSCVN0YXJ0VGltZR'
     'IYCgdFbmRUaW1lGB8gASgJUgdFbmRUaW1lEhwKCUlzSG9saWRheRggIAEoCFIJSXNIb2xpZGF5'
-    'EiYKDkluQ3VycmVudFNhbGVzGCEgASgIUg5JbkN1cnJlbnRTYWxlcw==');
+    'EiYKDkluQ3VycmVudFNhbGVzGCEgASgIUg5JbkN1cnJlbnRTYWxlcxIcCglJc1N0YW1wZWQYJS'
+    'ABKAhSCUlzU3RhbXBlZBIkCg1OdW1iZXJPZlRpbWVzGCYgASgFUg1OdW1iZXJPZlRpbWVz');
 
 @$core.Deprecated('Use shopLocationDescriptor instead')
 const ShopLocation$json = {
@@ -250,13 +253,14 @@ const ShopsRequest$json = {
   '1': 'ShopsRequest',
   '2': [
     {'1': 'SearchTypes', '3': 1, '4': 3, '5': 14, '6': '.egp.SearchType', '10': 'SearchTypes'},
+    {'1': 'UserId', '3': 2, '4': 1, '5': 9, '10': 'UserId'},
   ],
 };
 
 /// Descriptor for `ShopsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List shopsRequestDescriptor = $convert.base64Decode(
     'CgxTaG9wc1JlcXVlc3QSMQoLU2VhcmNoVHlwZXMYASADKA4yDy5lZ3AuU2VhcmNoVHlwZVILU2'
-    'VhcmNoVHlwZXM=');
+    'VhcmNoVHlwZXMSFgoGVXNlcklkGAIgASgJUgZVc2VySWQ=');
 
 @$core.Deprecated('Use shopsResponseDescriptor instead')
 const ShopsResponse$json = {
@@ -269,4 +273,58 @@ const ShopsResponse$json = {
 /// Descriptor for `ShopsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List shopsResponseDescriptor = $convert.base64Decode(
     'Cg1TaG9wc1Jlc3BvbnNlEh8KBVNob3BzGAEgAygLMgkuZWdwLlNob3BSBVNob3Bz');
+
+@$core.Deprecated('Use addStampRequestDescriptor instead')
+const AddStampRequest$json = {
+  '1': 'AddStampRequest',
+  '2': [
+    {'1': 'UserId', '3': 1, '4': 1, '5': 9, '10': 'UserId'},
+    {'1': 'ShopId', '3': 2, '4': 1, '5': 3, '10': 'ShopId'},
+  ],
+};
+
+/// Descriptor for `AddStampRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addStampRequestDescriptor = $convert.base64Decode(
+    'Cg9BZGRTdGFtcFJlcXVlc3QSFgoGVXNlcklkGAEgASgJUgZVc2VySWQSFgoGU2hvcElkGAIgAS'
+    'gDUgZTaG9wSWQ=');
+
+@$core.Deprecated('Use addStampResponseDescriptor instead')
+const AddStampResponse$json = {
+  '1': 'AddStampResponse',
+  '2': [
+    {'1': 'NumberOfTimes', '3': 1, '4': 1, '5': 5, '10': 'NumberOfTimes'},
+  ],
+};
+
+/// Descriptor for `AddStampResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addStampResponseDescriptor = $convert.base64Decode(
+    'ChBBZGRTdGFtcFJlc3BvbnNlEiQKDU51bWJlck9mVGltZXMYASABKAVSDU51bWJlck9mVGltZX'
+    'M=');
+
+@$core.Deprecated('Use deleteStampRequestDescriptor instead')
+const DeleteStampRequest$json = {
+  '1': 'DeleteStampRequest',
+  '2': [
+    {'1': 'UserId', '3': 1, '4': 1, '5': 9, '10': 'UserId'},
+    {'1': 'ShopId', '3': 2, '4': 1, '5': 3, '10': 'ShopId'},
+  ],
+};
+
+/// Descriptor for `DeleteStampRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteStampRequestDescriptor = $convert.base64Decode(
+    'ChJEZWxldGVTdGFtcFJlcXVlc3QSFgoGVXNlcklkGAEgASgJUgZVc2VySWQSFgoGU2hvcElkGA'
+    'IgASgDUgZTaG9wSWQ=');
+
+@$core.Deprecated('Use deleteStampResponseDescriptor instead')
+const DeleteStampResponse$json = {
+  '1': 'DeleteStampResponse',
+  '2': [
+    {'1': 'NumberOfTimes', '3': 1, '4': 1, '5': 5, '10': 'NumberOfTimes'},
+  ],
+};
+
+/// Descriptor for `DeleteStampResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteStampResponseDescriptor = $convert.base64Decode(
+    'ChNEZWxldGVTdGFtcFJlc3BvbnNlEiQKDU51bWJlck9mVGltZXMYASABKAVSDU51bWJlck9mVG'
+    'ltZXM=');
 

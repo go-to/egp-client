@@ -15,18 +15,15 @@ class StampManagementPage extends ConsumerStatefulWidget {
 }
 
 class _StampManagementPageState extends ConsumerState<StampManagementPage> {
-  Future<ShopsResponse> _fetchShops() async {
-    return await GrpcService.getShops([]);
+  Future<ShopsResponse> _fetchShops(String userId) async {
+    return await GrpcService.getShops(userId, []);
   }
 
   @override
   Widget build(BuildContext context) {
     final user = ref.read(authServiceProvider.notifier).getCurrentUser();
-    // FIXME 取得したユーザー情報を使用
-    print(user);
-
     return FutureBuilder<ShopsResponse>(
-      future: _fetchShops(),
+      future: _fetchShops(user!.uid),
       builder: (BuildContext context, AsyncSnapshot<ShopsResponse> snapshot) {
         final data = snapshot.data;
         if (data == null) {
